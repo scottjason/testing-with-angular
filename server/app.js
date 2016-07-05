@@ -1,7 +1,10 @@
 const path = require('path')
 const express = require('express')
 const logger = require('morgan')
+const database = require('./config/database')
 const rootDir = path.join( __dirname, '../')
+
+database.connect()
 
 const app = express()
 const port = process.env.PORT || 3000

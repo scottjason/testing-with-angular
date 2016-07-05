@@ -3,7 +3,7 @@
 ### ~ WIP ~
 
 ## Description
-An angular todo app with auth and testing via mocha, jasmine and phantomjs.
+An angular todo app with auth and testing via Karma, Jasmine and PhantomJS.
 
 
 ## Installation
