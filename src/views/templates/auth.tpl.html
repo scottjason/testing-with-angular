@@ -1,0 +1,9 @@
+<div class='auth-template'>
+  <input type='text' placeholder='Email'>
+  <input type='password' placeholder='Password'>
+  <button ng-click='onSubmit()'>{{ isLoginView ? 'LOGIN' : 'SIGNUP' }}</button>
+  <p ng-click='toggle()' 
+     class='opt'>{{ isLoginView ? 'Need an account?' : 'Have an account?' }}
+  </p>
+  <p class='err'>{{ errMessage }}</p>
+</div>

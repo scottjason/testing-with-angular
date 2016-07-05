@@ -1,0 +1,44 @@
+{
+  "name": "testing-with-angular",
+  "version": "1.0.0",
+  "description": "Angular Testing w Karma, Jasmine and PhantomJS",
+  "main": "server.js",
+  "scripts": {
+    "start": "gulp",
+    "test": "karma start",
+    "preinstall": "rm -rf ~/.npm && npm cache clear",
+    "postinstall": "gulp build"
+  },
+  "author": "Scott Jason",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "ejs": "^2.4.2",
+    "express": "^4.13.4",
+    "morgan": "^1.7.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "angular": "^1.5.6",
+    "angular-mocks": "^1.5.6",
+    "angular-ui-router": "^0.3.0",
+    "bower": "^1.7.9",    
+    "colors": "^1.1.2",
+    "gulp": "^3.9.1",    
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-concat": "^2.6.0",
+    "gulp-nodemon": "^2.1.0",
+    "gulp-stylus": "^2.5.0",
+    "gulp-uglify": "^1.5.4",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-junit-reporter": "^1.1.0",    
+    "karma-jasmine": "^1.0.2",
+    "karma-ng-html2js-preprocessor": "^1.0.0",
+    "karma-phantomjs-launcher": "^1.0.1",
+    "karma-spec-reporter": "0.0.26",
+    "rimraf": "^2.5.3",
+    "run-sequence": "^1.2.2"
+  }
+}

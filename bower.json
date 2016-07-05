@@ -1,0 +1,20 @@
+{
+  "name": "testing-with-angular",
+  "description": "Angular Testing w Karma, Jasmine and PhantomJS",
+  "authors": [
+    "Scott Jason"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.7",
+    "angular-ui-router": "~0.3.1"
+  }
+}

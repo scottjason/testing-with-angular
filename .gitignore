@@ -1,0 +1,5 @@
+node_modules/
+src/bower_components
+dist/
+.DS_Store
+*.log
