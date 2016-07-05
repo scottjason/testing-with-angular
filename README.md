@@ -11,7 +11,7 @@ An angular todo app with auth and testing via mocha, jasmine and phantomjs.
 Grab the repo, set node version via [nvm](https://github.com/creationix/nvm) then install the dependecies:
 
 ```sh
-$ git clone git@github.com:scottjason/angular-testing.git && cd angular-testing
+$ git clone git@github.com:scottjason/testing-with-angular.git && cd testing-with-angular
 $ nvm use 5.2.0
 $ npm i -g bower && npm i -g gulp-cli
 $ npm i && bower i
