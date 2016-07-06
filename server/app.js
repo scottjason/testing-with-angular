@@ -1,10 +1,10 @@
 const path = require('path')
 const express = require('express')
 const logger = require('morgan')
-const database = require('./config/database')
+const bodyParser = require('body-parser')
 const rootDir = path.join( __dirname, '../')
 
-database.connect()
+require('./config/database').createTables()
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -16,10 +16,12 @@ app.engine('html', require('ejs').renderFile)
 app.set('view engine', 'html')
 
 app.use(logger('dev'))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+
 app.use(express.static(path.join(rootDir, 'dist')))
 
-// todo: add auth and routes
-app.get('*', (req, res, next) => res.render('index'))
+require('./routes')(app)
 
 app.listen(port, () => {
   console.log('Server listening to port:'.green, port.toString().green)

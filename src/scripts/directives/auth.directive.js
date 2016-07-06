@@ -16,9 +16,9 @@ function auth() {
 
   return directive
 
-  controller.$inject = ['$scope']
+  controller.$inject = ['$scope', 'Api']
 
-  function controller($scope) {
+  function controller($scope, Api) {
 
     $scope.isLoginView = true
 
@@ -32,9 +32,10 @@ function auth() {
     }
 
     $scope.onSubmit = function() {
+      console.log($scope.user)
       if (isValidEmail() && isValidPassword()) {
         $scope.errMessage = ''
-        console.log('make api call')
+        $scope.isLoginView ? login() : signup()
         return true
       } else {
         $scope.errMessage = 'invalid credentials'
@@ -49,6 +50,32 @@ function auth() {
 
     function isValidPassword() {
       return typeof $scope.user.password === 'string' && $scope.user.password.length > 5
+    }
+
+    function login() {
+      Api.post('/login', $scope.user).then(function(res) {
+        if (res.status === 200) {
+          $scope.user = res.data.user
+          console.log('Login Success', $scope.user)
+        } else {
+          $scope.errMessage = res.data.message
+        }
+      }, onError)
+    }
+
+    function signup() {
+      Api.post('/signup', $scope.user).then(function(res) {
+        if (res.status === 200) {
+          $scope.user = res.data.user
+          console.log('Signup Success', $scope.user)
+        } else {
+          $scope.errMessage = res.data.message
+        }
+      }, onError)
+    }
+
+    function onError(err) {
+      console.log(err)
     }
   }
 }

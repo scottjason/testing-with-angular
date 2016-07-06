@@ -34,6 +34,8 @@ gulp.task('devJS', () => {
   return gulp.src(['src/scripts/app.js',
       'src/scripts/app.config.js',
       'src/scripts/controllers/*.js',
+      'src/scripts/services/*.js',
+      '!src/scripts/services/*.spec.js',
       'src/scripts/directives/*.js',
       '!src/scripts/directives/*.spec.js',
       'src/scripts/services/*.js'
